@@ -1,0 +1,30 @@
+version: '3'
+volumes:
+  pg_dataStorage:
+  pgadmin_dataStorage:
+services:
+  db:
+    container_name: Hackpg
+    image: postgres
+    restart: always
+    hostname: postgres
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: test_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - pg_dataStorage:/var/lib/postgresql/data/
+  
+  pgadmin:
+    container_name: Hackpgadmin4
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: root
+    ports:
+      - "8082:80"
+    volumes:
+      - pgadmin_dataStorage:/var/lib/pgadmin/
