@@ -10,14 +10,10 @@ export class PaypalService {
   private expiresAt: number;
 
   constructor() {
-    // PAYPAL_USERID=ATlR2Z93FdjrdVRV9VVoeZmr9fN_4jksKuy8mMosCuWx2dA07EwulE5EKw3yA3mj94D5YhdaZ5U9TRpc
-    // PAYPAY_USERSECRET=ECx-if7e0OGjv-P9tmGWHghCab5je4c1FoMCvA1aiQWYcTUbuVP4PkRTlvQ9GB0ZysRxz7uuDT9NB-0O
-    // PAYPAL_URL=https://api.sandbox.paypal.com
-
     this.userId =
-      'ATlR2Z93FdjrdVRV9VVoeZmr9fN_4jksKuy8mMosCuWx2dA07EwulE5EKw3yA3mj94D5YhdaZ5U9TRpc';
+      '';
     this.userSercret =
-      'EBRnZ_a-1mc9FQtXSONRK5jbAmmLtO5P6vakbJGgBZTdRiQOyPtgaXyFJRdhi7j7Q1roQ2uAMmNnAAtj';
+      '';
     this.createBearer(this.userId, this.userSercret);
   }
   private async createBearer(userId: string, userSercret: string) {
